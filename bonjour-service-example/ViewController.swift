@@ -10,6 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	@IBOutlet weak var connectionLabel: UILabel!
+	
+	
+	@IBAction func actionATapped(sender: AnyObject) {
+	}
+	
+	
+	@IBAction func actionBTapped(sender: AnyObject) {
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
