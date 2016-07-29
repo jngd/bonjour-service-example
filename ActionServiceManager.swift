@@ -11,9 +11,6 @@ import MultipeerConnectivity
 import XCGLogger
 
 class ActionServiceManager: NSObject {
-
-
-
 }
 
 extension ActionServiceManager: MCNearbyServiceAdvertiserDelegate {
@@ -25,4 +22,7 @@ extension ActionServiceManager: MCNearbyServiceAdvertiserDelegate {
 	func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void) {
 		log.debug("Invitation receiver from peer")
 	}
+
 }
+
+// :]
