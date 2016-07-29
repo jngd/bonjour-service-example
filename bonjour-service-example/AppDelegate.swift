@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import XCGLogger
+
+let log = XCGLogger.defaultInstance()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+		log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: nil, fileLogLevel: nil)
+		
+		log.verbose("A verbose message, usually useful when working on a specific problem")
+		log.debug("A debug message")
+		log.info("An info message, probably useful to power users looking in console.app")
+		log.warning("A warning message, may indicate a possible error")
+		log.error("An error occurred, but it's recoverable, just info about what happened")
+		log.severe("A severe error occurred, we are likely about to crash now")
+		
 		return true
 	}
 

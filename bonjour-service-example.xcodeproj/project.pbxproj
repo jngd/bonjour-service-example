@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31235D1C1D4C1E0D0010C73D /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31235D1B1D4C1E0D0010C73D /* XCGLogger.framework */; };
+		31235D1D1D4C1E0D0010C73D /* XCGLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31235D1B1D4C1E0D0010C73D /* XCGLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3141F45F1D4808CC00F83B5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141F45E1D4808CC00F83B5B /* AppDelegate.swift */; };
 		3141F4611D4808CC00F83B5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141F4601D4808CC00F83B5B /* ViewController.swift */; };
 		3141F4641D4808CC00F83B5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3141F4621D4808CC00F83B5B /* Main.storyboard */; };
@@ -15,7 +17,22 @@
 		3141F4731D480C1800F83B5B /* ActionServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3141F4721D480C1800F83B5B /* ActionServiceManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		31235D1E1D4C1E0D0010C73D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				31235D1D1D4C1E0D0010C73D /* XCGLogger.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		31235D1B1D4C1E0D0010C73D /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		3141F45B1D4808CC00F83B5B /* bonjour-service-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bonjour-service-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3141F45E1D4808CC00F83B5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3141F4601D4808CC00F83B5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31235D1C1D4C1E0D0010C73D /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,7 @@
 		3141F4521D4808CC00F83B5B = {
 			isa = PBXGroup;
 			children = (
+				31235D1B1D4C1E0D0010C73D /* XCGLogger.framework */,
 				3141F4721D480C1800F83B5B /* ActionServiceManager.swift */,
 				3141F45D1D4808CC00F83B5B /* bonjour-service-example */,
 				3141F45C1D4808CC00F83B5B /* Products */,
@@ -77,6 +96,7 @@
 				3141F4571D4808CC00F83B5B /* Sources */,
 				3141F4581D4808CC00F83B5B /* Frameworks */,
 				3141F4591D4808CC00F83B5B /* Resources */,
+				31235D1E1D4C1E0D0010C73D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +275,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "bonjour-service-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jngd.bonjour-service-example";
@@ -266,6 +290,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "bonjour-service-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jngd.bonjour-service-example";
@@ -292,6 +320,7 @@
 				3141F46F1D4808CC00F83B5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
