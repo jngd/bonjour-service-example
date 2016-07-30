@@ -10,12 +10,6 @@ import Foundation
 import MultipeerConnectivity
 
 class ServiceAdvertiserDelegate: NSObject {
-
-	override init() {
-		super.init()
-	}
-	
-	deinit {}
 }
 
 extension ServiceAdvertiserDelegate: MCNearbyServiceAdvertiserDelegate {
