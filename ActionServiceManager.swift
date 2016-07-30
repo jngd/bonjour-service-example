@@ -11,18 +11,24 @@ import MultipeerConnectivity
 import XCGLogger
 
 class ActionServiceManager: NSObject {
-}
-
-extension ActionServiceManager: MCNearbyServiceAdvertiserDelegate {
 	
-	func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
-		log.debug("Error in advertiser \(error)")
+	private let exampleServiceType: String = "example-service"
+	private let serviceAdvertiser: MCNearbyServiceAdvertiser
+	private let serviceAdvertiserDelegate: ServiceAdvertiserDelegate
+	private let myPeerId: MCPeerID
+	
+	override init() {
+		self.myPeerId = MCPeerID(displayName: UIDevice.currentDevice().name)
+		self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: exampleServiceType)
+		self.serviceAdvertiserDelegate = ServiceAdvertiserDelegate()
+		super.init()
+		self.serviceAdvertiser.delegate = serviceAdvertiserDelegate
+		self.serviceAdvertiser.startAdvertisingPeer()
 	}
 	
-	func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void) {
-		log.debug("Invitation receiver from peer")
+	deinit {
+		self.serviceAdvertiser.stopAdvertisingPeer()
 	}
-
 }
 
 // :]

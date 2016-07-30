@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	let exampleServiceManager = ActionServiceManager()
+
 	@IBOutlet weak var connectionLabel: UILabel!
 	
 	@IBAction func actionATapped(sender: AnyObject) {

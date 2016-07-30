@@ -7,3 +7,27 @@
 //
 
 import Foundation
+import MultipeerConnectivity
+
+class ServiceAdvertiserDelegate: NSObject {
+
+	override init() {
+		super.init()
+	}
+	
+	deinit {}
+}
+
+extension ServiceAdvertiserDelegate: MCNearbyServiceAdvertiserDelegate {
+	
+	func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
+		log.debug("Error in advertiser \(error)")
+	}
+	
+	func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void) {
+		log.debug("Invitation receiver from peer")
+	}
+	
+}
+
+// :]
