@@ -17,6 +17,7 @@
 		3141F4641D4808CC00F83B5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3141F4621D4808CC00F83B5B /* Main.storyboard */; };
 		3141F4661D4808CC00F83B5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3141F4651D4808CC00F83B5B /* Assets.xcassets */; };
 		3141F4691D4808CC00F83B5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3141F4671D4808CC00F83B5B /* LaunchScreen.storyboard */; };
+		31B24A8F1D4FF8E2005799C5 /* ServiceSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B24A8E1D4FF8E2005799C5 /* ServiceSessionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		3141F4651D4808CC00F83B5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3141F4681D4808CC00F83B5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3141F46A1D4808CC00F83B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31B24A8E1D4FF8E2005799C5 /* ServiceSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSessionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				3141F4651D4808CC00F83B5B /* Assets.xcassets */,
 				3141F4671D4808CC00F83B5B /* LaunchScreen.storyboard */,
 				3141F46A1D4808CC00F83B5B /* Info.plist */,
+				31B24A8E1D4FF8E2005799C5 /* ServiceSessionDelegate.swift */,
 			);
 			path = "bonjour-service-example";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				31235D221D4C288A0010C73D /* ServiceBrowserDelegate.swift in Sources */,
 				31235D201D4C23C50010C73D /* ServiceAdvertiserDelegate.swift in Sources */,
 				31235D241D4C2D530010C73D /* ActionServiceManager.swift in Sources */,
+				31B24A8F1D4FF8E2005799C5 /* ServiceSessionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

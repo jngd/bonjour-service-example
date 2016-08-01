@@ -17,7 +17,14 @@ class ActionServiceManager: NSObject {
 	private let serviceAdvertiserDelegate: ServiceAdvertiserDelegate
 	private let serviceBrowser : MCNearbyServiceBrowser
 	private let serviceBrowserDelegate: ServiceBrowserDelegate
+	private let serviceSessionDelegate: ServiceSessionDelegate
 	private let myPeerId: MCPeerID
+
+	lazy var session: MCSession = {
+		let session = MCSession(peer: self.myPeerId, securityIdentity: nil, encryptionPreference: MCEncryptionPreference.Required)
+//		session.delegate = self
+		return session
+	}()
 	
 	override init() {
 
@@ -31,7 +38,9 @@ class ActionServiceManager: NSObject {
 
 		self.serviceAdvertiser.delegate = serviceAdvertiserDelegate
 		self.serviceBrowser.delegate = serviceBrowserDelegate
-
+		
+		self.serviceSessionDelegate = ServiceSessionDelegate()
+		
 		self.serviceAdvertiser.startAdvertisingPeer()
 		
 		super.init()
@@ -39,6 +48,19 @@ class ActionServiceManager: NSObject {
 	
 	deinit {
 		self.serviceAdvertiser.stopAdvertisingPeer()
+	}
+	
+}
+
+extension MCSessionState {
+	
+	func stringValue() -> String {
+		switch (self) {
+		case .NotConnected: return "NotConnected"
+		case .Connecting: return "Connecting"
+		case .Connected: return "Connected"
+		default: return "Unknown"
+		}
 	}
 }
 
