@@ -22,7 +22,7 @@ class ActionServiceManager: NSObject {
 
 	lazy var session: MCSession = {
 		let session = MCSession(peer: self.myPeerId, securityIdentity: nil, encryptionPreference: MCEncryptionPreference.Required)
-//		session.delegate = self
+		session.delegate = self.serviceSessionDelegate
 		return session
 	}()
 	
