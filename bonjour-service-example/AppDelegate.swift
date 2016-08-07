@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		log.debug("")
 		
+		let cfunctionnumber = cfunction();
+		
+		log.debug("\(cfunctionnumber)")
+		
 		return true
 	}
 
